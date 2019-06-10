@@ -4,8 +4,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,add_index  :users, :name, unique: true|
-|email|string|null: false,add_index  :users, :email, unique: true|
+|name|string|null: false, index: true, unique: true|
+|email|string|null: false,index: true, unique: true|
 |password|string|null:false|
 
 ### Association
