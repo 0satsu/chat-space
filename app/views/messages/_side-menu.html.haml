@@ -1,0 +1,28 @@
+
+.side-menu
+  .side-menu__top
+    .side-menu__top__user
+      .side-menu__top__user__name 
+        %p user-name
+      .side-menu__top__user__menu
+        = link_to "" ,class: "side-menu__top__user__menu__icon" do
+          = icon "fas","edit"
+          %span<>
+        = link_to "",class: "side-menu__top__user__menu__icon" do
+          = icon "fas","cog"
+          %span<>
+
+  .side-menu__bottom
+    %ul 
+      %li 
+        .side-menu__bottom__group
+          .side-menu__bottom__group__name
+            %p test-group
+          .side-menu__bottom__group__message
+            %p test-message
+      %li 
+        .side-menu__bottom__group
+          .side-menu__bottom__group__name
+            %p test-group
+          .side-menu__bottom__group__message
+            %p test-message

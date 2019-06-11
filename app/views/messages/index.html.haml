@@ -1,1 +1,5 @@
-hallo!
+- if flash[:notice]
+  .flash-box
+    = flash[:notice]
+.main
+  = render partial: "side-menu"
