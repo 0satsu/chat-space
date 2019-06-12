@@ -1,0 +1,39 @@
+.main
+  = render partial: "side-menu"
+  .chat
+    .chat__top  
+      .chat__top__left
+        .chat__top__info__name
+          %p group-name
+        .chat__top__left__member
+          %p Members: 
+      .chat__top__right
+        = link_to "Edit","", class: "chat__top__right__edit"
+    .chat__bottom
+      %ul
+        %li
+          .chat__bottom__message
+            .chat__bottom__message_info
+              .chat__bottom__message__info__user
+                %p test-user
+              .chat__bottom__message__info__date
+                %p 〇〇/〇〇/〇〇
+            .chat__bottom__message__text
+              %p こんにちは！
+        %li
+          .chat__bottom__message
+            .chat__bottom__message_info
+              .chat__bottom__message__info__user
+                %p test-user
+              .chat__bottom__message__info__date
+                %p 〇〇/〇〇/〇〇
+            .chat__bottom__message__text
+              %p テスト2
+    .chat__footer
+      .chat__footer__box
+        .chat__footer__box__text
+          %p type a message
+        .chat__footer__box__image
+          = icon "far","image"
+      .chat__footer__submit
+        %p Send
