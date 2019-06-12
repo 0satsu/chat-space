@@ -4,13 +4,14 @@
 
 
 @import "reset";
+@import 'variable';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'side-menu';
 @import 'group';
 
 .flash-box{
-  background-color: #38AEF0;
+  background-color: $btn;
   color: white;
   text-align: center;
 }
