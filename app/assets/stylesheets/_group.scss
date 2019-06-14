@@ -79,7 +79,7 @@
   &__footer{
     width: calc(100vw - 300px);
     background-color: #e7e6e6;
-    padding:20px 40px;
+    padding:0px 40px;
     position:fixed;
     bottom: 0;
     display:flex;
@@ -101,17 +101,14 @@
         vertical-align: middle;
       }
       &__image{
-        height: 100%;
         font-size:25px;
         line-height: 50px;
         margin: auto 0;
         vertical-align: middle;
-        #upload-icon{
-          display: none;
-        }
         position: absolute;
         right: 10px;
         bottom: 0;
+        cursor: pointer;
       }
     }
     &__submit{
