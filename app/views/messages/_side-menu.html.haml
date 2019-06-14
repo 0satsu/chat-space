@@ -3,12 +3,12 @@
   .side-menu__top
     .side-menu__top__user
       .side-menu__top__user__name 
-        %p user-name
+        = current_user.name
       .side-menu__top__user__menu
-        = link_to "" ,class: "side-menu__top__user__menu__icon" do
+        = link_to "",class: "side-menu__top__user__menu__icon" do
           = icon "fas","edit"
           %span<>
-        = link_to "",class: "side-menu__top__user__menu__icon" do
+        = link_to edit_user_path(current_user),class: "side-menu__top__user__menu__icon" do
           = icon "fas","cog"
           %span<>
 

@@ -3,12 +3,14 @@
 }
 
 
-@import "reset";
-@import 'variable';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-@import 'side-menu';
-@import 'group';
+@import "config/reset";
+@import 'config/color';
+@import 'modules/side-menu';
+@import 'modules/group';
+@import 'modules/user';
+@import 'modules/flash';
 
 .flash-box{
   background-color: $btn;
