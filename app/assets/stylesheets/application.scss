@@ -6,10 +6,11 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import "config/reset";
-@import 'config/variable';
+@import 'config/color';
 @import 'modules/side-menu';
 @import 'modules/group';
 @import 'modules/user';
+@import 'modules/flash';
 
 .flash-box{
   background-color: $btn;
