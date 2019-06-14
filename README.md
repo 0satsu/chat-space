@@ -26,7 +26,7 @@
 - has_many :members
 
 
-## membersテーブル
+## group_userテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -35,7 +35,7 @@
 
 ### Association
 - belongs_to :user
-- belongs_to :member
+- belongs_to :group
 
 
 ## messagesテーブル
