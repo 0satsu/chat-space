@@ -14,15 +14,11 @@
 
   .side-menu__bottom
     %ul 
-      %li 
-        .side-menu__bottom__group
-          .side-menu__bottom__group__name
-            %p test-group
-          .side-menu__bottom__group__message
-            %p test-message
-      %li 
-        .side-menu__bottom__group
-          .side-menu__bottom__group__name
-            %p test-group
-          .side-menu__bottom__group__message
-            %p test-message
+      - current_user.groups.each do |group|
+        %li 
+          .side-menu__bottom__group
+            =link_to group_messages_path(group) do
+              .side-menu__bottom__group__name
+                %p= group.name
+              .side-menu__bottom__group__message
+                %p メッセージはまだありません。
