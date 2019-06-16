@@ -8,9 +8,10 @@
 @import "config/reset";
 @import 'config/color';
 @import 'modules/side-menu';
-@import 'modules/group';
+@import 'modules/show';
 @import 'modules/user';
 @import 'modules/flash';
+@import 'modules/group';
 
 .flash-box{
   background-color: $btn;
