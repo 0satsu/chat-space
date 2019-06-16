@@ -5,7 +5,7 @@
       .side-menu__top__user__name 
         = current_user.name
       .side-menu__top__user__menu
-        = link_to "",class: "side-menu__top__user__menu__icon" do
+        = link_to new_group_path ,class: "side-menu__top__user__menu__icon" do
           = icon "fas","edit"
           %span<>
         = link_to edit_user_path(current_user),class: "side-menu__top__user__menu__icon" do
@@ -14,15 +14,11 @@
 
   .side-menu__bottom
     %ul 
-      %li 
-        .side-menu__bottom__group
-          .side-menu__bottom__group__name
-            %p test-group
-          .side-menu__bottom__group__message
-            %p test-message
-      %li 
-        .side-menu__bottom__group
-          .side-menu__bottom__group__name
-            %p test-group
-          .side-menu__bottom__group__message
-            %p test-message
+      - current_user.groups.each do |group|
+        %li 
+          .side-menu__bottom__group
+            =link_to group_messages_path(group) do
+              .side-menu__bottom__group__name
+                %p= group.name
+              .side-menu__bottom__group__message
+                %p メッセージはまだありません。
