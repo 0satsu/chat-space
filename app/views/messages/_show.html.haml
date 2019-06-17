@@ -1,0 +1,28 @@
+.main
+  = render partial: "side-menu"
+  .chat
+    .chat__top  
+      .chat__top__left
+        .chat__top__info__name
+          %p group-name
+        .chat__top__left__member
+          %p= "Members: "
+          %ul.members
+            - @group.users.each do |user|
+              %li.member
+                = user.name
+      .chat__top__right
+        = link_to "Edit","", class: "chat__top__right__edit"
+    .chat__bottom
+      %ul
+        = render @messages
+
+    .chat__footer
+      = form_for [@group, @message] do |f|
+        .chat__footer__box
+          = f.text_field :content, class:"chat__footer__box__text", placeholder: "type a message"
+          .form__mask
+            = f.label :image, class:"chat__footer__box__image" do
+              =icon 'fas','image'
+              = f.text_field :image, class: "hidden"
+        =f.submit "Send", class: "chat__footer__submit"
