@@ -57,6 +57,9 @@
   &__bottom{
     margin-top: 100px;
     padding: 46px 40px 0;
+    clear:both;
+    height: calc(100vh - 100px - 90px);
+    overflow:scroll;
     &__message{
       padding-bottom: 40px;
       &__info{
@@ -84,7 +87,6 @@
         font-size:14px;
         color: $text;
       }
-      
     }
   }
   &__footer{
