@@ -4,7 +4,7 @@
     .chat__top  
       .chat__top__left
         .chat__top__info__name
-          %p group-name
+          %p= @group.name
         .chat__top__left__member
           %p= "Members: "
           %ul.members
@@ -14,7 +14,7 @@
       .chat__top__right
         = link_to "Edit","", class: "chat__top__right__edit"
     .chat__bottom
-      %ul
+      %ul.messages
         = render @messages
 
     .chat__footer
