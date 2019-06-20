@@ -15,11 +15,8 @@ $(function(){
                     </p>
                   </div>
                 </div>`
-    if (message.image.url == null){
-      html = $(html).append(`<div></div>`)
-    }else{
-      html = $(html).append(`<img class="chat__bottom__message__image" src="${message.image.url}" width="250" height="250">`)
-    }
+    html = message.image.url== null?
+     $(html).append(`<div></div>`) : $(html).append(`<img class="chat__bottom__message__image" src="${message.image.url}" width="250" height="250">`)
     return html;
   };
 
