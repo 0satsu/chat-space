@@ -40,8 +40,7 @@ $(function(){
       var html = buildHTML(data)
       $('.messages').append(html);
       $('.chat__bottom').animate({ scrollTop: $('.chat__bottom')[0].scrollHeight});
-      $('.chat__footer__box__text').val("");
-      $('.hidden').val("");
+      $(new_message)[0].reset();
     })
     .fail(function(){
       alert("エラーが発生しました")
