@@ -6,7 +6,7 @@ $(function(){
                       <p>${message.user}</p>
                     </div>
                     <div class="chat__bottom__message__info__date">
-                      <p>${message.image}</p>
+                      <p>${message.created_at}</p>
                     </div>
                   </div>
                   <div class="chat__bottom__message__content">
@@ -15,6 +15,11 @@ $(function(){
                     </p>
                   </div>
                 </div>`
+    if (message.image.url == null){
+      html = $(html).append(`<div></div>`)
+    }else{
+      html = $(html).append(`<img class="chat__bottom__message__image" src="${message.image.url}" width="250" height="250">`)
+    }
     return html;
   };
 
@@ -36,7 +41,7 @@ $(function(){
       $('.messages').append(html);
       $('.chat__bottom').animate({ scrollTop: $('.chat__bottom')[0].scrollHeight});
       $('.chat__footer__box__text').val("");
-
+      $('.hidden').val("");
     })
     .fail(function(){
       alert("エラーが発生しました")
