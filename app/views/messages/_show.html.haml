@@ -12,7 +12,7 @@
               %li.member
                 = user.name
       .chat__top__right
-        = link_to "Edit","", class: "chat__top__right__edit"
+        = link_to "Edit",edit_group_path(@group), class: "chat__top__right__edit"
     .chat__bottom
       %ul.messages
         = render @messages
