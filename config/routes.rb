@@ -9,4 +9,7 @@ Rails.application.routes.draw do
       resources :messages, only: :index, defaults: { format: 'json' }
     end
   end
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
 end
