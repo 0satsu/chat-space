@@ -47,14 +47,18 @@ $(function(){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $(".chat__bottom__message").last().data("id");
     var last_message_group = $(".chat__bottom__message").last().data("group-id");
+    var data = {id: last_message_id}
+    url = `/groups/${last_message_group}/api/messages`;
+    console.log(data);
+  
     $.ajax({
       //ルーティングで設定した通りのURLを指定
-      url: "/groups/:group_id/api/messages",
+      url: url,
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
       //dataオプションでリクエストに値を含める
-      data: {id: last_message_id, group_id: last_message_group}
+      data: data
     })
     .done(function(messages) {
        //追加するHTMLの入れ物を作る
