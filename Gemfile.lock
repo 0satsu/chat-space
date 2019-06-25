@@ -310,6 +310,7 @@ DEPENDENCIES
   rails-ujs
   rspec-rails
   sass-rails (~> 5.0)
+  sassc (= 2.0.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
