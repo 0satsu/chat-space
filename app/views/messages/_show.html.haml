@@ -23,6 +23,6 @@
           = f.text_field :content, class:"chat__footer__box__text", placeholder: "type a message"
           .form__mask
             = f.label :image, class:"chat__footer__box__image" do
-              =icon 'fas','image'
+              =fa_icon "image", class: "icon"
               = f.file_field :image, class: "hidden"
         =f.submit "Send", class: "chat__footer__submit"

@@ -6,10 +6,10 @@
         = current_user.name
       .side-menu__top__user__menu
         = link_to new_group_path ,class: "side-menu__top__user__menu__icon" do
-          = icon "fas","edit"
+          = fa_icon 'edit'
           %span<>
         = link_to edit_user_path(current_user),class: "side-menu__top__user__menu__icon" do
-          = icon "fas","cog"
+          = fa_icon 'cog'
           %span<>
 
   .side-menu__bottom
