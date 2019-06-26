@@ -25,11 +25,20 @@
     .chat-group-form__field--right
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       #chat-group-users
-        #chat-group-user-8.chat-group-user.clearfix.js-chat-member
-          %input.member_id{name:"group[user_ids][]", type: "hidden", value: current_user.id }
-          %p.chat-group-user__name 
-            = current_user.name
-          .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+        - unless @group
+          #chat-group-user-8.chat-group-user.clearfix.js-chat-member
+            %input.member_id{name:"group[user_ids][]", type: "hidden", value: current_user.id }
+            %p.chat-group-user__name 
+              = current_user.name
+            .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+        - else 
+          - @group.users.each do |user|
+            #chat-group-user-8.chat-group-user.clearfix.js-chat-member
+              %input.member_id{name:"group[user_ids][]", type: "hidden", value: user.id }
+              %p.chat-group-user__name 
+                = user.name
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
