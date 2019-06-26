@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var html = `<div class="chat__bottom__message" data-id =${message.id}  data-group_id = ${message.group_id} >
+    var html = `<div class="chat__bottom__message" data-id =${message.id}  data-group-id = ${message.group_id} >
                   <div class="chat__bottom__message_info">
                     <div class="chat__bottom__message__info__user">
                       <p>${message.user}</p>
@@ -49,7 +49,6 @@ $(function(){
     var last_message_group = $(".chat__bottom__message").last().data("group-id");
     var data = {id: last_message_id}
     url = `/groups/${last_message_group}/api/messages`;
-    console.log(data);
   
     $.ajax({
       //ルーティングで設定した通りのURLを指定
@@ -73,8 +72,11 @@ $(function(){
       });
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
-  setInterval(reloadMessages, 5000);
+  var reg = location.href.match(/\/groups\/\d+\/messages/)
+  if(reg !== null){
+    setInterval(reloadMessages, 3000);
+  }
 });
