@@ -43,7 +43,6 @@ $(function(){
   });
   var user_ids = [];
   $(document).on("click",".user-search-add",function(){
-    console.log(this)
     var memberName = $(this).data('user-name');
     var memberId = $(this).data('user-id');
     html2 = AddMember(memberId,memberName);
